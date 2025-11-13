@@ -2956,7 +2956,8 @@ void __init xfrm_init(void)
 	synchronize_rcu();
 }
 
-#ifdef CONFIG_AUDITSYSCALL
+// [ SEC_SELINUX_PORTING_COMMON - remove AUDIT_MAC_IPSEC_EVENT audit log, it conflict with security notification
+#if 0 // #ifdef CONFIG_AUDITSYSCALL
 static void xfrm_audit_common_policyinfo(struct xfrm_policy *xp,
 					 struct audit_buffer *audit_buf)
 {
